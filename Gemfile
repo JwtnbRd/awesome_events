@@ -43,9 +43,15 @@ gem 'hamlit-rails', '~> 0.2.3'
 
 gem 'sassc-rails'
 
+gem 'rails-ujs'
+
+gem 'rails-i18n'
+
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
+
+gem 'bootstrap', '~> 5.2'
 
 
 

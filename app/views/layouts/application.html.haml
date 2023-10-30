@@ -14,6 +14,21 @@
         = link_to "AwesomeEvents", root_path, class: "navbar-brand mr-auto"
         %ul.navbar-nav
           %li.nav-item
-            = link_to "Githubでログイン", "/auth/github", class: "nav-link", method: :post
+            = link_to "イベントを作る", new_event_path, class: "nav-link"
+          - if logged_in?
+            %li.nav-item
+              = button_to "ログアウト", logout_path, class: "nav-link", method: :delete, data: { turbo: false }
+          - else
+            %li.nav-item
+              = button_to "Githubでログイン", "/auth/github", class: "nav-link", method: :post, data: { turbo: false }
+
     .container
+      - if flash.notice
+        .alert.alert-success
+          = flash.notice
+      - if flash.alert
+        .alert.alert-danger 
+          = flash.alert
+
       = yield
+ 
